@@ -2,10 +2,12 @@
 import os, sys
 import openpyxl
 
+#Criando a planilha
 book = openpyxl.Workbook()
-
+#Criando a página
 book.create_sheet('Clientes')
 
+#Cadastrando os clientes fictícios
 #,telefone,endereco,produto
 s_page = book['Clientes']
 s_page.append(['Nome','telefone','endereco','produto participante'])
