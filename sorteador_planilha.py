@@ -19,9 +19,10 @@ clientes = []
 for col in clientes_page.iter_cols(min_row=2,max_col=1):
     for cell in col:
         clientes.append(cell.value)
-#Caso você queira comprovar que o índice e o elemento estão sendo sorteados certos, é só descomentar essas duas linhas e rodar o código
+
+#Caso você queira comprovar que o índice e o elemento estão sendo sorteados corretamente, é só descomentar essas duas linhas e rodar o código
 # print(clientes)
 # print(s)
 
 #Imprimindo o cliente sorteado
-print(clientes[s])            
+print(clientes[s])
