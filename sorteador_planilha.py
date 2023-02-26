@@ -1,7 +1,7 @@
 # This Python file uses the following encoding: utf-8
 import os, sys
 import openpyxl 
-import random
+import random as rd
 
 #Especificando a planilha
 book = openpyxl.load_workbook('Planilha de Clientes.xlsx')
@@ -12,14 +12,15 @@ clientes_page = book['Clientes']
 print('Escolha o número 12(A planilha foi feita com 12 clientes)')
 n = input('Insira a quantidade de clientes participantes: ')
 #Criando o número sorteador aleatório e limitando ao tamanho do vetor
-s = random.randrange(1,n)
+s = rd.randrange(1,n)
 
 #Criando o vetor com os participantes(puxando os dados da planilha) e iterando o sorteio
 clientes = []
-for col in clientes_page.iter_cols(min_row=2,max_col=1):
-    for cell in col:
-        clientes.append(cell.value)
-
+def sorteador():
+    for col in clientes_page.iter_cols(min_row=2,max_col=1):
+        for cell in col:
+            clientes.append(cell.value)
+sorteador()
 #Caso você queira comprovar que o índice e o elemento estão sendo sorteados corretamente, é só descomentar essas duas linhas e rodar o código
 # print(clientes)
 # print(s)
